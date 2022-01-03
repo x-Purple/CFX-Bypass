@@ -1,6 +1,7 @@
 # CFX-Bypass
 
 What's the purpose of this?
+
 Program blocks the outbounding and inbounding calls from adhesive so they won't get to check your hwid from their auth server.
 
 How to use:
