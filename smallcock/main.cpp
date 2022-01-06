@@ -33,7 +33,7 @@ int main()
 		g_network = std::make_unique<network>();
 		g_trace = std::make_unique<trace>();
 
-		g_trace->m_fivem_path = g_trace->set_folder("Select Folder");
+		g_trace->m_fivem_path = g_trace->set_folder("Select FiveM Folder which contains FiveM.exe");
 	
 		if (g_trace->m_fivem_path != "")
 		{
