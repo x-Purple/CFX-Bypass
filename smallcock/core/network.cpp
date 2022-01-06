@@ -29,16 +29,16 @@ void network::setup()
 	// Locate FiveM Subprocesses path
 	auto subprocess_path = g_trace->m_fivem_path + "\\" + "FiveM.app" + "\\" + "data" + "\\" + "cache" + "\\" "subprocess";
 
-	std::vector<std::string> gta_versions{ "b2545", "b2372", "b2189", "b2060",  "" };
+	std::vector<std::string> gta_versions{ "b2545_", "b2372_", "b2189_", "b2060_",  "" };
 
 	for (auto processes : gta_versions)
 	{
 		// Block the gta processes
-		auto gta_process = subprocess_path + "\\" + "FiveM_" + processes + "_GTAProcess.exe";
+		auto gta_process = subprocess_path + "\\" + "FiveM_" + processes + "GTAProcess.exe";
 		block_connection(gta_process);
 
 		// Block the steam processes
-		auto steam_process = subprocess_path + "\\" + "FiveM_" + processes + "_SteamChild.exe";
+		auto steam_process = subprocess_path + "\\" + "FiveM_" + processes + "SteamChild.exe";
 		block_connection(steam_process);
 	}
 
@@ -54,16 +54,16 @@ void network::destroy()
 	// Locate FiveM Subprocesses path
 	auto subprocess_path = g_trace->m_fivem_path + "\\" + "FiveM.app" + "\\" + "data" + "\\" + "cache" + "\\" "subprocess";
 
-	std::vector<std::string> gta_versions{ "b2545", "b2372", "b2189", "b2060",  "" };
+	std::vector<std::string> gta_versions{ "b2545_", "b2372_", "b2189_", "b2060_",  "" };
 
 	for (auto processes : gta_versions)
 	{
 		// Block the gta processes
-		auto gta_process = subprocess_path + "\\" + "FiveM_" + processes + "_GTAProcess.exe";
+		auto gta_process = subprocess_path + "\\" + "FiveM_" + processes + "GTAProcess.exe";
 		unblock_connection(gta_process);
 
 		// Block the steam processes
-		auto steam_process = subprocess_path + "\\" + "FiveM_" + processes + "_SteamChild.exe";
+		auto steam_process = subprocess_path + "\\" + "FiveM_" + processes + "SteamChild.exe";
 		unblock_connection(steam_process);
 	}
 }
