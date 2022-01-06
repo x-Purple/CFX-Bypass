@@ -11,3 +11,5 @@
 #include <vector>
 #include <cctype>
 
+#include <shlobj_core.h>
+

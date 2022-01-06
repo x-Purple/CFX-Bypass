@@ -1,4 +1,5 @@
 #include "network.hpp"
+#include "trace.hpp"
 
 void network::block_connection(std::string process)
 {
@@ -20,15 +21,13 @@ void network::unblock_connection(std::string process)
 
 void network::setup()
 {
-	std::string appdata = getenv("LOCALAPPDATA");
-
 	// Locate FiveM.exe
-	auto fivem_path = appdata + "\\" + "FiveM" + "\\" + "FiveM.exe";
+	auto fivem_path = g_trace->m_fivem_path + "\\" + "FiveM.exe";
 	block_connection(fivem_path);
 
 
 	// Locate FiveM Subprocesses path
-	auto subprocess_path = appdata + "\\" + "FiveM" + "\\" + "FiveM.app" + "\\" + "data" + "\\" + "cache" + "\\" "subprocess";
+	auto subprocess_path = g_trace->m_fivem_path + "\\" + "FiveM.app" + "\\" + "data" + "\\" + "cache" + "\\" "subprocess";
 
 	std::vector<std::string> gta_versions{ "b2545", "b2372", "b2189", "b2060",  "" };
 
@@ -45,16 +44,15 @@ void network::setup()
 
 }
 
+
 void network::destroy()
 {
-	std::string appdata = getenv("LOCALAPPDATA");
-
 	// Locate FiveM.exe
-	auto fivem_path = appdata + "\\" + "FiveM" + "\\" + "FiveM.exe";
+	auto fivem_path = g_trace->m_fivem_path + "\\" + "FiveM.exe";
 	unblock_connection(fivem_path);
 
 	// Locate FiveM Subprocesses path
-	auto subprocess_path = appdata + "\\" + "FiveM" + "\\" + "FiveM.app" + "\\" + "data" + "\\" + "cache" + "\\" "subprocess";
+	auto subprocess_path = g_trace->m_fivem_path + "\\" + "FiveM.app" + "\\" + "data" + "\\" + "cache" + "\\" "subprocess";
 
 	std::vector<std::string> gta_versions{ "b2545", "b2372", "b2189", "b2060",  "" };
 
