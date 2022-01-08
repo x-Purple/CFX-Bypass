@@ -13,4 +13,4 @@ How to use:
 
 Current status?
 
-Seems to be working 3.1.2022
+Seems to be working 8.1.2022
