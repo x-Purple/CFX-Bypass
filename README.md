@@ -1,7 +1,6 @@
 # CFX-Bypass
 
-For the people who are having problems. 
-
+For the people who are having problems.  
 Most likely not going to personally help you but you can ask other users about it here.
 
 https://discord.gg/Db7BUuv9Zv
