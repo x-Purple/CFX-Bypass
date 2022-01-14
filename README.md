@@ -10,7 +10,8 @@ How to use:
 3. Log in to new rockstar account without ban. The account must be unused, because fivem is banning the new accounts if your opening it without the bypass with hwid banned computer.
 4. Try joining server if it returns error, then disable the bypass and try joining the server. 
 5. NOTE: Don't ever open FiveM without the bypass. Otherwise they will ban your new rockstar account for using it in hwid banned computer.
+6. IMPORTANT: clear traces everytime u restart fivem otherwise they will ban your new account.
 
 Current status?
 
-Seems to be working 3.1.2022
+Seems to be working 8.1.2022
