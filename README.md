@@ -1,5 +1,9 @@
 # CFX-Bypass
 
+Most likely not going to personally help you but you can ask other users about it here.
+
+https://discord.gg/Db7BUuv9Zv
+
 What's the purpose of this?
 
 Program blocks the outbounding and inbounding calls from adhesive so they won't get to check your hwid from their auth server. Basically allows you to play FiveM on hwid banned computers.
