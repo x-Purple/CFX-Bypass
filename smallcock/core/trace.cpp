@@ -18,6 +18,7 @@ void trace::setup()
 	}
 
 	// Locate CitizenFX
+	
 	appdata = localappdata + "\\" + "CitizenFX";
 	if (std::filesystem::remove_all(appdata))
 	{
@@ -66,6 +67,11 @@ std::string trace::set_folder(std::string title)
 		{
 			char buffer[_MAX_PATH];
 			if (SHGetPathFromIDList(pidl, buffer)) ret = buffer;
+		}
+
+		if (!std::filesystem::exists(ret + "\\" + "FiveM.exe"))
+		{
+			return std::string();
 		}
 
 		if (!ret.empty())
