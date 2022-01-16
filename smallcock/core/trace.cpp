@@ -18,7 +18,6 @@ void trace::setup()
 	}
 
 	// Locate CitizenFX
-	
 	appdata = localappdata + "\\" + "CitizenFX";
 	if (std::filesystem::remove_all(appdata))
 	{
@@ -29,8 +28,6 @@ void trace::setup()
 		std::cout << "Couldn't Find: " << appdata << std::endl;
 	}
 }
-
-
 
 INT CALLBACK browse_callback_proc(HWND hwnd, UINT uMsg, LPARAM lp, LPARAM pData)
 {
@@ -88,6 +85,27 @@ std::string trace::set_folder(std::string title)
 		std::string name;
 		path >> name;
 		return name;
+	}
+}
+
+
+void trace::set_launch_build()
+{
+	int choice;
+
+	std::vector<const char*> m_builds = { "2545", "2372", "2189", "2060", "1604" };
+
+	for (int i = 0; i < m_builds.size(); i++)
+	{
+		std::cout << "  [" << i + 1 << "]  :  " << m_builds[i] << std::endl;
+	}
+	std::cin >> choice;
+
+	auto config_path = m_fivem_path + "\\FiveM.app\\CitizenFX.ini";
+
+	if (std::filesystem::exists(config_path.c_str()))
+	{
+		WritePrivateProfileString("Game", "SavedBuildNumber", m_builds[choice - 1], config_path.c_str());
 	}
 }
 

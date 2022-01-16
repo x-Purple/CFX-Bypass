@@ -47,6 +47,7 @@ int main()
 				std::cout << "  [2]  :  " << "enable network bypass" << std::endl;
 				std::cout << "  [3]  :  " << "disable network bypass" << std::endl;
 				std::cout << "  [4]  :  " << "reset fivem path" << std::endl;
+				std::cout << "  [5]  :  " << "edit launch options" << std::endl;
 				std::cin >> choice;
 
 				switch (choice)
@@ -67,6 +68,11 @@ int main()
 					}
 					break;
 					case 4:
+					{
+						g_trace->set_launch_build();
+					}
+					break;
+					case 5:
 					{
 						g_trace->destroy();
 					}
