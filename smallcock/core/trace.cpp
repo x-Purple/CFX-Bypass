@@ -101,12 +101,24 @@ void trace::set_launch_build()
 	}
 	std::cin >> choice;
 
-	auto config_path = m_fivem_path + "\\FiveM.app\\CitizenFX.ini";
+	auto path = std::string(m_fivem_path + m_citizen_ini_path).c_str();
 
-	if (std::filesystem::exists(config_path.c_str()))
+	if (std::filesystem::exists(path))
 	{
-		WritePrivateProfileString("Game", "SavedBuildNumber", m_builds[choice - 1], config_path.c_str());
+		WritePrivateProfileString("Game", "SavedBuildNumber", m_builds[choice - 1], path);
 	}
+}
+
+std::string trace::get_launch_build()
+{
+	auto path = std::string(m_fivem_path + m_citizen_ini_path).c_str();
+	auto buildNumber = 0;
+
+	if (std::filesystem::exists(path))
+	{
+		buildNumber = GetPrivateProfileInt("Game", "SavedBuildNumber", buildNumber, path);
+	}
+	return std::to_string(buildNumber);
 }
 
 

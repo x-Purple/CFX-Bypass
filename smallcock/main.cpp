@@ -41,8 +41,9 @@ int main()
 
 			if (!g_trace->m_fivem_path.empty())
 			{
-				std::cout << "  [Selected Folder]  " << g_trace->m_fivem_path << "\n" << std::endl;
-
+				std::cout << "  [Selected Folder]  " << g_trace->m_fivem_path << std::endl;
+				std::cout << "  [Launch Build]  " << g_trace->get_launch_build() << "\n" << std::endl;
+	
 				std::cout << "  [1]  :  " << "clean traces" << std::endl;
 				std::cout << "  [2]  :  " << "enable network bypass" << std::endl;
 				std::cout << "  [3]  :  " << "disable network bypass" << std::endl;
