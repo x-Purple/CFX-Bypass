@@ -69,12 +69,12 @@ int main()
 					break;
 					case 4:
 					{
-						g_trace->set_launch_build();
+						g_trace->destroy();
 					}
 					break;
 					case 5:
 					{
-						g_trace->destroy();
+						g_trace->set_launch_build();
 					}
 					break;
 				}
